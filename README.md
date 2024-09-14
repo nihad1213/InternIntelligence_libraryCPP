@@ -4,7 +4,13 @@
 The OwnMath library provides a set of custom mathematical operations, including basic arithmetic, power, factorial, and trigonometric functions. This library allows users to perform various mathematical calculations easily.
 
 ## Directory Structure
-├── build/ # Directory for CMake build files ├── inc/ # Directory for header files │ └── ownmath.h # Header file for OwnMath library ├── src/ # Directory for source files │ └── main.cpp # Example source file for testing the library ├── CMakeLists.txt # CMake configuration file └── README.md
+├── build/ # Directory for CMake build files 
+├── inc/ # Directory for header files 
+│ └── ownmath.h, datastructures.h # Header files library 
+├── src/ # Directory for source files 
+│ └── main.cpp, main2.cpp # Example source files for testing the library 
+├── CMakeLists.txt # CMake configuration file 
+└── README.md
 
 
 ## Functions

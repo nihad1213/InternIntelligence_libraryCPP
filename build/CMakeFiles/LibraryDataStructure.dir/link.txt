@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/LibraryDataStructure.dir/src/main2.cpp.o -o LibraryDataStructure

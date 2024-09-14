@@ -8,3 +8,4 @@ include_directories(${CMAKE_SOURCE_DIR}/inc)
 
 # Add the executable by specifying the source files in the src folder
 add_executable(Library src/main.cpp)
+add_executable(LibraryDataStructure src/main2.cpp)
