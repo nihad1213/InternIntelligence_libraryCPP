@@ -1,0 +1,2 @@
+In src folder we have files which we test our library. In inc folder we store our header files.
+In inc/ownmath.h file there is functions. With this functions we can calculate mathematical operations.

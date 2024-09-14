@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MyProject.dir/src/simplemath.cpp.o -o MyProject
