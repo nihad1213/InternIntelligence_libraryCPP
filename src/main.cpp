@@ -4,35 +4,50 @@
 int main() {
     // Testing sum function 
     double Sum = sum(3, 4);
-    std::cout << Sum << '\n';
+    std::cout << "Sum: " << Sum << '\n';
     
     // Testing sub function
     double Sub = sub(4.5, 6);
-    std::cout << Sub << '\n';
+    std::cout << "Subtraction: " << Sub << '\n';
 
     // Testing mul function
     double Mul = mul(1, 3);
-    std::cout << Mul << '\n';
+    std::cout << "Multiplication: " << Mul << '\n';
 
     // Testing divv function
     double Div = divv(1, 3);
-    std::cout << Div << '\n'; 
+    std::cout << "Division: " << Div << '\n'; 
 
     // Testing mod function
-    int Mod = mod(12, 5);
-    std::cout << Mod << '\n';
+    long int Mod = mod(12, 5);
+    std::cout << "Modulus: " << Mod << '\n';
 
     // Testing power function
     double Pow = power(2, 3);
-    std::cout << Pow << '\n';
+    std::cout << "Power: " << Pow << '\n';
 
-    // Testing factiroal function
+    // Testing factorial function
     double Fac = factorial(5);
-    std::cout << Fac << '\n';
+    std::cout << "Factorial: " << Fac << '\n';
 
-    // Testinf abs function
+    // Testing abs function
     double Abs = abs(-10.56);
-    std::cout << Abs << '\n';
+    std::cout << "Absolute value: " << Abs << '\n';
+
+    // Testing trigonometric functions
+    double angle = 30.0;
+
+    double Sin = sin(angle);
+    std::cout << "sin(" << angle << ") = " << Sin << '\n';
+
+    double Cos = cos(angle);
+    std::cout << "cos(" << angle << ") = " << Cos << '\n';
+
+    double Tan = tan(angle);
+    std::cout << "tan(" << angle << ") = " << Tan << '\n';
+
+    double Ctg = ctg(angle);
+    std::cout << "cot(" << angle << ") = " << Ctg << '\n';
 
     return 0;
-} 
+}
