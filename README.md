@@ -90,7 +90,7 @@ int main() {
 
     return 0;
 }
-
+```
 # CMake Instructions
 Navigate to the build directory:
 ```
