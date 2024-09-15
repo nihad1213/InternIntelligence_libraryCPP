@@ -242,7 +242,7 @@ enqueue(&queue, 1);
 enqueue(&queue, 2);
 std::cout << "Dequeued element: " << dequeue(&queue) << std::endl; // Output: 1
 freeQueue(&queue); // Free queue resources
-
+```
 
 
 # CMake Instructions
