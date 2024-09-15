@@ -6,13 +6,15 @@
  * Dynamic Array 
  */
 struct DynamicArray {
-    int* arr;
-    int capacity;
-    int size;
+    int* arr;     // Pointer to the array
+    int capacity; // Capacity of the array
+    int size;     // Current size of the array
 };
 
 /**
  * Initialize a dynamic array with a given capacity
+ * @dArray: Pointer to the dynamic array
+ * @capacity: Initial capacity
  */
 void initArray(DynamicArray* dArray, int capacity) {
     dArray->arr = (int*)malloc(capacity * sizeof(int));
@@ -22,6 +24,7 @@ void initArray(DynamicArray* dArray, int capacity) {
 
 /**
  * Resize the dynamic array when it is full
+ * @dArray: Pointer to the dynamic array
  */
 void resizeArray(DynamicArray* dArray) {
     dArray->capacity *= 2;
@@ -30,6 +33,8 @@ void resizeArray(DynamicArray* dArray) {
 
 /**
  * Insert element into the dynamic array
+ * @dArray: Pointer to the dynamic array
+ * @element: Element to insert
  */
 void insertArray(DynamicArray* dArray, int element) {
     if (dArray->size == dArray->capacity) {
@@ -40,6 +45,8 @@ void insertArray(DynamicArray* dArray, int element) {
 
 /**
  * Remove element from the dynamic array
+ * @dArray: Pointer to the dynamic array
+ * @index: Index of the element to remove
  */
 void removeArray(DynamicArray* dArray, int index) {
     if (index < 0 || index >= dArray->size) {
@@ -54,6 +61,9 @@ void removeArray(DynamicArray* dArray, int index) {
 
 /**
  * Get element from the dynamic array
+ * @dArray: Pointer to the dynamic array
+ * @index: Index of the element to get
+ * @return: Element at the given index
  */
 int getArray(DynamicArray* dArray, int index) {
     if (index < 0 || index >= dArray->size) {
@@ -65,6 +75,7 @@ int getArray(DynamicArray* dArray, int index) {
 
 /** 
  * Free the dynamic array
+ * @dArray: Pointer to the dynamic array
  */
 void freeArray(DynamicArray* dArray) {
     free(dArray->arr);
@@ -75,12 +86,14 @@ void freeArray(DynamicArray* dArray) {
  * Singly Linked List Node
  */
 struct Node {
-    int data;
-    Node* next;
+    int data;   // Data in the node
+    Node* next; // Pointer to the next node
 };
 
 /**
  * Insert a new node at the end of the linked list
+ * @head: Pointer to the head pointer of the list
+ * @data: Data to insert
  */
 void insertNode(Node** head, int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
@@ -100,6 +113,8 @@ void insertNode(Node** head, int data) {
 
 /**
  * Delete a node from the linked list
+ * @head: Pointer to the head pointer of the list
+ * @key: Data value of the node to delete
  */
 void deleteNode(Node** head, int key) {
     Node* temp = *head;
@@ -124,6 +139,7 @@ void deleteNode(Node** head, int key) {
 
 /**
  * Display the linked list
+ * @head: Pointer to the head of the list
  */
 void displayList(Node* head) {
     Node* temp = head;
@@ -138,11 +154,13 @@ void displayList(Node* head) {
  * Stack using Dynamic Array
  */
 struct Stack {
-    DynamicArray stackArray;
+    DynamicArray stackArray; // Dynamic array to store stack elements
 };
 
 /**
  * Initialize a stack
+ * @stack: Pointer to the stack
+ * @capacity: Initial capacity of the stack
  */
 void initStack(Stack* stack, int capacity) {
     initArray(&stack->stackArray, capacity);
@@ -150,6 +168,8 @@ void initStack(Stack* stack, int capacity) {
 
 /**
  * Push element onto the stack
+ * @stack: Pointer to the stack
+ * @element: Element to push
  */
 void push(Stack* stack, int element) {
     insertArray(&stack->stackArray, element);
@@ -157,6 +177,8 @@ void push(Stack* stack, int element) {
 
 /**
  * Pop element from the stack
+ * @stack: Pointer to the stack
+ * @return: Popped element
  */
 int pop(Stack* stack) {
     if (stack->stackArray.size == 0) {
@@ -168,6 +190,8 @@ int pop(Stack* stack) {
 
 /**
  * Peek at the top element of the stack
+ * @stack: Pointer to the stack
+ * @return: Top element of the stack
  */
 int peek(Stack* stack) {
     if (stack->stackArray.size == 0) {
@@ -181,13 +205,15 @@ int peek(Stack* stack) {
  * Queue using Dynamic Array
  */
 struct Queue {
-    DynamicArray queueArray;
-    int front;
-    int rear;
+    DynamicArray queueArray; // Dynamic array to store queue elements
+    int front;               // Front index
+    int rear;                // Rear index
 };
 
 /**
  * Initialize a queue
+ * @queue: Pointer to the queue
+ * @capacity: Initial capacity of the queue
  */
 void initQueue(Queue* queue, int capacity) {
     initArray(&queue->queueArray, capacity);
@@ -197,6 +223,8 @@ void initQueue(Queue* queue, int capacity) {
 
 /**
  * Enqueue element into the queue
+ * @queue: Pointer to the queue
+ * @element: Element to enqueue
  */
 void enqueue(Queue* queue, int element) {
     if (queue->queueArray.size == queue->queueArray.capacity) {
@@ -208,6 +236,8 @@ void enqueue(Queue* queue, int element) {
 
 /**
  * Dequeue element from the queue
+ * @queue: Pointer to the queue
+ * @return: Dequeued element
  */
 int dequeue(Queue* queue) {
     if (queue->queueArray.size == 0) {
@@ -217,4 +247,12 @@ int dequeue(Queue* queue) {
     int item = queue->queueArray.arr[queue->front++];
     queue->queueArray.size--;
     return item;
+}
+
+/**
+ * Free the queue
+ * @queue: Pointer to the queue
+ */
+void freeQueue(Queue* queue) {
+    freeArray(&queue->queueArray);
 }
